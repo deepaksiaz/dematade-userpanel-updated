@@ -1,7 +1,10 @@
 import { AutoComplete, Input, notification, Select } from "antd";
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { searchBrokers } from "../../../../Redux/Actions/BrokerActions";
+import {
+  searchBrokers,
+  aliceBrokerLogin,
+} from "../../../../Redux/Actions/BrokerActions";
 import "./BrokerLogin.scss";
 import Swastika from "../../../../Component/Broker/Swastika/swastika";
 import AliceBlue from "../../../../Component/Broker/AliceBlue/aliceBlue";
@@ -46,6 +49,16 @@ function BrokerLogin(props) {
         });
       if ("authCode" in search && "userId" in search) {
         let { authCode, userId } = search;
+
+        if (!userId || !authCode) {
+          notification.error({
+            message: "Login Error",
+            description: "Enter valid Broker, User ID and Password...",
+          });
+          return;
+        }
+        const data = { userId: userId, authToken: authCode };
+        dispatch(aliceBrokerLogin(data, () => {}));
       }
     }
   }, []);

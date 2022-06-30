@@ -45,6 +45,41 @@ export const brokerLogin = (data, onSuccess) => {
       });
   };
 };
+export const aliceBrokerLogin = (data, onSuccess) => {
+  return async (dispatch) => {
+    dispatch({
+      type: actionTypes.BROKER_LOGIN_INIT,
+    });
+    const token = getTokenFromLocalStorage();
+    
+    axios
+      .post(
+        `${API_URL}/broker/alice_login`,
+        { ...data },
+        { headers: { Authorization: `Bearer ${token}` } }
+      )
+      .then((res) => {
+        if (res.data?.success) {
+          dispatch({
+            type: actionTypes.BROKER_LOGIN_SUCCESS,
+            payload: res.data,
+          });
+          onSuccess();
+        } else {
+          dispatch({
+            type: actionTypes.BROKER_LOGIN_FAIL,
+            payload: res.data?.message || "Failed to login",
+          });
+        }
+      })
+      .catch((e) => {
+        dispatch({
+          type: actionTypes.BROKER_LOGIN_FAIL,
+          payload: typeof e == "string" ? e : "Failed to login",
+        });
+      });
+  };
+};
 
 export const getBrokerLoginStatus = () => {
   return async (dispatch) => {
