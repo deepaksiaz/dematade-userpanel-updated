@@ -7,6 +7,6 @@ switch (process.env.REACT_APP_ENVIRONMENT) {
     API_URL = "https://api.dematadesolution.com";
     break;
   default:
-    API_URL = "https://api.dematadesolution.com";
+    API_URL = "http://localhost:9005";
 }
 export { API_URL };

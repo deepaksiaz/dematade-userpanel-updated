@@ -49,6 +49,7 @@ function BrokerLogin(props) {
         });
       if ("authCode" in search && "userId" in search) {
         let { authCode, userId } = search;
+        console.log( authCode, userId )
 
         if (!userId || !authCode) {
           notification.error({
