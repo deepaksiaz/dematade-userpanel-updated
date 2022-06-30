@@ -1,0 +1,40 @@
+.downloads-main-wrap {
+  .single-item {
+    margin-bottom: 20px;
+    .field-label {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      color: #344054;
+    }
+    .field-value {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+      color: #344054;
+    }
+  }
+  .charting-download-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    border: 1px solid #012bfe;
+    box-sizing: border-box;
+    border-radius: 4px;
+    width: 55%;
+    cursor: pointer;
+    .btn-icon {
+      color: #012bfe;
+      font-size: 18px;
+      margin-right: 16px;
+    }
+    .btn-label {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      color: #012bfe;
+    }
+  }
+}

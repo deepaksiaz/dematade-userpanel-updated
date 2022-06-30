@@ -1,0 +1,40 @@
+.signal-scanner-main-wrap {
+  .signal-scanner-tabs-wrap {
+    padding: 26px 34px;
+    .ant-tabs-nav-list {
+      width: 100%;
+      justify-content: space-between;
+      background: rgba(118, 118, 128, 0.12);
+      border-radius: 8px;
+      padding: 0px 2px;
+      .ant-tabs-tab {
+        width: 100%;
+        padding: 14px;
+        align-items: center;
+        justify-content: center;
+        border: none !important;
+        background: transparent !important;
+        margin: 4px 0px;
+        .ant-tabs-tab-btn {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 20px;
+          display: flex;
+          align-items: center;
+          text-align: center;
+          color: #000000;
+        }
+      }
+      .ant-tabs-tab-active {
+        background: #ffffff !important;
+        border: 0.5px solid rgba(0, 0, 0, 0.04);
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.12),
+          0px 3px 1px rgba(0, 0, 0, 0.04);
+        border-radius: 6px;
+        .ant-tabs-tab-btn {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,113 @@
+.contact-us-main-wrap {
+  padding: 24px 32px;
+  .contactus-content-wrap {
+    display: flex;
+    height: 100%;
+    width: 70%;
+    .left-box {
+      width: 45%;
+      flex: 1;
+      background: #d0d5dd;
+      box-shadow: 0px 4px 8px -2px rgba(16, 24, 40, 0.1),
+        0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+      border-radius: 8px 0px 0px 8px;
+      padding: 16px 24px;
+      .title {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        text-transform: uppercase;
+        color: #4a4a4a;
+      }
+      .subtitle {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        color: #344054;
+        margin-top: 12px;
+        margin-bottom: 32px;
+      }
+      .single-box {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 16px 0px 16px 16px;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 8px;
+        margin-bottom: 24px;
+        .icon {
+          font-size: 38px;
+          color: #344054;
+          margin-right: 28px;
+        }
+        .box-content {
+          display: flex;
+          flex-direction: column;
+          .box-content-label {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 20px;
+            color: #344054;
+            margin-bottom: 16px;
+          }
+          .box-content-value {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 20px;
+            color: #344054;
+          }
+        }
+      }
+    }
+    .right-box {
+      flex: 1;
+      width: 55%;
+      background: #ffffff;
+      box-shadow: 0px 4px 8px -2px rgba(16, 24, 40, 0.1),
+        0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+      border-radius: 0px 8px 8px 0px;
+      padding: 24px;
+      .single-field {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 24px;
+        label {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 20px;
+          color: #344054;
+        }
+        .ant-input {
+          background: #ffffff;
+          border: 1px solid #d0d5dd;
+          box-sizing: border-box;
+          box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+          border-radius: 8px;
+          margin-top: 6px;
+          padding: 6px 12px;
+        }
+      }
+      .send-message-btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 12px;
+        background: #012bfe;
+        border-radius: 4px;
+        span {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 19px;
+          text-transform: uppercase;
+          color: #ffffff;
+        }
+        .send-btn {
+          background: transparent;
+          border: none;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

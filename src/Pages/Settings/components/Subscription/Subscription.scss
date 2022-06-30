@@ -1,0 +1,20 @@
+.subscription-main-wrap {
+  .single-item {
+    margin-bottom: 20px;
+    .field-label {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      color: #344054;
+    }
+    .field-value {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+      color: #344054;
+    }
+    .ant-switch-checked {
+      background: #35a947;
+    }
+  }
+}

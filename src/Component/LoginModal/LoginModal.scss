@@ -1,0 +1,44 @@
+.login-broker-modal {
+
+  .ant-modal-content {
+    height: 325px;
+    .ant-modal-footer {
+      display: flex;
+      flex-direction: row-reverse;
+     
+      .ant-btn-primary {
+        margin-right: 12px;
+        
+      }
+    }
+    .row-wrap {
+      margin-bottom: 16px;
+      .ant-col {
+        display: flex;
+        flex-direction: column;
+        .ant-select {
+          margin-top: 6px;
+          .ant-select-selector {
+            border-radius: 16px;
+            padding: 4px 16px;
+            height: auto;
+          }
+        }
+      }
+      .ant-input {
+        margin-top: 6px;
+        border-radius: 16px;
+        padding: 8px 16px;
+      }
+      .ant-input-password {
+        margin-top: 6px;
+        border-radius: 16px;
+        padding: 0px 16px;
+        .ant-input {
+          margin-top: 0;
+          padding: 8px 0px;
+        }
+      }
+    }
+  }
+}

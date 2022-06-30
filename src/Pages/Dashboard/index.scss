@@ -1,0 +1,100 @@
+.dashboard-main-wrapper {
+  .dashboard-top-panel {
+    padding: 10px 32px;
+    background: rgba(255, 255, 255, 0.5);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .left-section {
+      display: flex;
+      align-items: center;
+      .label {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+        color: #252733;
+        margin-right: 16px;
+        &:last-of-type {
+          margin-left: 16px;
+        }
+      }
+      .arrow-up {
+        font-size: 16px;
+        color: #14804a;
+      }
+      .arrow-down {
+        font-size: 16px;
+        color: #d1293d;
+      }
+      .value {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 1px 8px;
+        border-radius: 4px;
+        margin-left: 6px;
+        span {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 18px;
+        }
+      }
+      .success {
+        background: #e1fcef;
+        span {
+          color: #14804a;
+        }
+      }
+      .error {
+        background: #ffedef;
+        span {
+          color: #d1293d;
+        }
+      }
+    }
+  }
+  .dashboard-tabs-wrap {
+    padding: 26px 34px;
+    .ant-tabs-nav-list {
+      width: 100%;
+      justify-content: space-between;
+      background: rgba(118, 118, 128, 0.12);
+      border-radius: 8px;
+      padding: 0px 2px;
+      .ant-tabs-tab {
+        width: 100%;
+        padding: 14px;
+        align-items: center;
+        justify-content: center;
+        border: none !important;
+        background: transparent !important;
+        margin: 4px 0px;
+        border-left: 2px solid #ccc !important;
+        &:first-of-type {
+          border: none !important;
+        }
+        .ant-tabs-tab-btn {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 20px;
+          display: flex;
+          align-items: center;
+          text-align: center;
+          color: #000000;
+        }
+      }
+      .ant-tabs-tab-active {
+        background: #ffffff !important;
+        border: 0.5px solid rgba(0, 0, 0, 0.04);
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.12),
+          0px 3px 1px rgba(0, 0, 0, 0.04);
+        border-radius: 6px;
+        .ant-tabs-tab-btn {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

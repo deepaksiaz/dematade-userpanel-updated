@@ -1,0 +1,228 @@
+.charting-api-key-main {
+  padding: 24px 32px;
+  .generate-key-box {
+    padding: 16px 24px 24px;
+    background: #ffffff;
+    box-shadow: 0px 4px 8px -2px rgba(16, 24, 40, 0.1),
+      0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+    border-radius: 8px;
+    margin-bottom: 24px;
+    .box-title {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 22px;
+      text-transform: uppercase;
+      color: #4a4a4a;
+    }
+    .key-content {
+      display: flex;
+      align-items: center;
+      margin-top: 16px;
+      .key-input {
+        background: #ffffff;
+        border: 1px solid #d0d5dd;
+        box-sizing: border-box;
+        box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+        border-radius: 8px;
+        padding: 10px 14px;
+        width: 45%;
+        margin-right: 24px;
+      }
+      .ant-input:disabled {
+        color: #000;
+      }
+      .disable-btn {
+        opacity: 0.4;
+        cursor: not-allowed !important;
+      }
+      .generate-btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
+        padding: 12px;
+        background: #012bfe;
+        cursor: pointer;
+        border-radius: 4px;
+        margin-right: 16px;
+        span {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 19px;
+          text-align: center;
+          text-transform: uppercase;
+          color: #ffffff;
+        }
+      }
+      .copy-btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
+        padding: 12px;
+        background: #686767;
+        cursor: pointer;
+        border-radius: 4px;
+        span {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 19px;
+          text-transform: uppercase;
+          color: #ffffff;
+        }
+      }
+      .active-status-switch {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-left: 16px;
+        label {
+          font-size: 16px;
+          font-weight: 600;
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+  .copy-trade-box {
+    padding: 16px 24px 24px;
+    background: #ffffff;
+    box-shadow: 0px 4px 8px -2px rgba(16, 24, 40, 0.1),
+      0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+    border-radius: 8px;
+    .box-title {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 22px;
+      text-transform: uppercase;
+      color: #4a4a4a;
+    }
+    .content-single-row {
+      &:first-of-type {
+        margin-top: 24px;
+      }
+      .single-field {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 16px;
+        .label {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 20px;
+          color: #344054;
+          margin-bottom: 6px;
+        }
+        .ant-select {
+          border: 1px solid #d0d5dd;
+          box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+          border-radius: 8px;
+          width: 100%;
+          padding: 5px 0px;
+          .ant-select-selector {
+            border: none !important;
+            box-shadow: none !important;
+          }
+
+          &.ant-select-status-error {
+            background: #fff;
+            border-color: #ff4d4f;
+          }
+        }
+        .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+          border: unset !important;
+          background: unset !important;
+        }
+        .input-number {
+          background: #ffffff;
+          border: 1px solid #d0d5dd;
+          box-sizing: border-box;
+          box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+          border-radius: 8px;
+          height: 44px !important;
+
+          &.ant-input-status-error {
+            background: #fff;
+            border-color: #ff4d4f;
+          }
+        }
+      }
+    }
+    .action-btn-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-top: 16px;
+      .buy-btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 12px;
+        background: #32d583;
+        cursor: pointer;
+        border-radius: 4px;
+        margin-right: 16px;
+        span {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 19px;
+          text-transform: uppercase;
+          color: #ffffff;
+        }
+      }
+      .sell-btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 12px;
+        background: #f97066;
+        border-radius: 4px;
+        margin-right: 16px;
+        cursor: pointer;
+        span {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 19px;
+          text-transform: uppercase;
+          color: #ffffff;
+        }
+      }
+      .cancel-btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 12px;
+        background: #bdbdbd;
+        border-radius: 4px;
+        cursor: pointer;
+        span {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 19px;
+          text-transform: uppercase;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
+.message_pop
+{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+  /* identical to box height, or 156% */
+  margin-left: 5px;
+  
+  /* Gray/900 */
+  
+  color: #101828;
+}

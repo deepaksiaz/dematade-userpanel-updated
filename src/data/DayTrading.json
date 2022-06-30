@@ -1,0 +1,72 @@
+[
+    {
+      "type": "BANKNIFTY NFO",
+      "segment": "NFO",
+      "active": true,
+      "tradeType": "bankniftynfo",
+      "note": "For 1 Lot 90k capital required."
+    },
+    {
+      "type": "NIFTY NFO",
+      "segment": "NFO",
+      "active": true,
+      "tradeType": "niftynfo",
+      "note": "For 1 Lot 80k capital required."
+    },
+    {
+      "type": "BANKNIFTY Option",
+      "segment": "NFO",
+      "active": true,
+      "tradeType": "bankniftyoption",
+      "note": "For 1 Lot 25k capital required."
+    },
+    {
+      "type": "NIFTY Option",
+      "segment": "NFO",
+      "active": true,
+      "tradeType": "niftyoption",
+      "note": "For 1 Lot 25k capital required."
+    },
+    {
+      "type": "BANKNIFTY OPTION SELLING",
+      "segment": "NFO",
+      "active": true,
+      "tradeType": "bankniftyoptionselling",
+      "note": "For 1 Lot 50k capital required with hedging."
+    },
+    {
+      "type": "NIFTY OPTION SELLING",
+      "segment": "NFO",
+      "active": true,
+      "tradeType": "niftyoptionselling",
+      "note": "For 1 Lot 50k capital required with hedging."
+    },
+    {
+      "type": "MCX NFO",
+      "segment": "MCX",
+      "active": true,
+      "tradeType": "mcxnfo",
+      "note": "For 1 Lot one symbol  2 Lacs capital required."
+    },
+    {
+      "type": "NSE-Currency",
+      "segment": "CDS",
+      "active": true,
+      "tradeType": "nsecurrency",
+      "note": "For 1 Lot one symbol 10k capital required."
+    },
+    {
+      "type": "NSE CASH",
+      "segment": "NSE",
+      "active": true,
+      "tradeType": "nsecash",
+      "note": "For 5 qty 5 stock 15k capital required."
+    },
+    {
+      "type": "STOCK NFO",
+      "segment": "NFO",
+      "active": true,
+      "tradeType": "stocknfo",
+      "note": "For 1 Lot one symbol  1.8 Lacs capital required."
+    }
+  ]

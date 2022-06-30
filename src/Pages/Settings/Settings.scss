@@ -1,0 +1,50 @@
+.settings-main-wrap {
+  padding: 24px 32px;
+  .setting-panel {
+    height: 100%;
+    .setting-left-panel-wrap {
+      padding: 16px 24px;
+      background: #fff;
+      .setting-title {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        text-transform: uppercase;
+        color: #4a4a4a;
+      }
+      .setting-side-item-wrap {
+        margin: 24px 0px;
+        padding: 10px 16px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 8px;
+        cursor: pointer;
+        .item-title {
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 20px;
+          color: #344054;
+        }
+        .item-desc {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 20px;
+          color: #344054;
+        }
+      }
+      .active-item {
+        cursor: auto;
+        background: #e8eaee;
+      }
+    }
+    .setting-content-wrap {
+      padding: 24px 44px;
+      background: #ffffff;
+      box-shadow: -4px 0px 4px rgba(0, 0, 0, 0.08),
+        0px 4px 8px -2px rgba(16, 24, 40, 0.01),
+        0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+      border-radius: 0px 8px 8px 0px;
+      height: 100%;
+    }
+  }
+}
