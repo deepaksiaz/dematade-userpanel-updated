@@ -4,7 +4,7 @@ switch (process.env.REACT_APP_ENVIRONMENT) {
     API_URL = "https://api.dematadesolution.com";
     break;
   case "staging":
-    API_URL = "https://api.dematadesolution.com";
+    API_URL = "http://localhost:9005";
     break;
   default:
     API_URL = "http://localhost:9005";

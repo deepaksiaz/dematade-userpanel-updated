@@ -4,10 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   searchBrokers,
   aliceBrokerLogin,
+  angelBrokerLogin
 } from "../../../../Redux/Actions/BrokerActions";
 import "./BrokerLogin.scss";
 import Swastika from "../../../../Component/Broker/Swastika/swastika";
 import AliceBlue from "../../../../Component/Broker/AliceBlue/aliceBlue";
+import  AngelBroking from "../../../../Component/Broker/AngelBroking/angelbroking";
 
 const { Option } = AutoComplete;
 
@@ -26,7 +28,7 @@ function BrokerLogin(props) {
   };
 
   const handleSearch = (value) => {
-    console.log("handleSearch", value);
+    
     if (value.length > 3) {
       dispatch(searchBrokers(value, onSearchSuccess));
     }
@@ -47,9 +49,10 @@ function BrokerLogin(props) {
           let b = a.split("=");
           search[b[0]] = b[1];
         });
+
+         console.log("dd666")
       if ("authCode" in search && "userId" in search) {
         let { authCode, userId } = search;
-        console.log( authCode, userId )
 
         if (!userId || !authCode) {
           notification.error({
@@ -100,7 +103,7 @@ function BrokerLogin(props) {
             </AutoComplete>
           </div>
 
-          <AliceBlue />
+          <AngelBroking broker={broker}/>
           {/* <Swastika broker={broker} /> */}
         </center>
       </div>
