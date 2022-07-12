@@ -16,7 +16,7 @@ import SignalScanner from "./Pages/SignalScanner/SignalScanner";
 import Strategic from "./Pages/Strategic/Strategic";
 import Tutorials from "./Pages/Tutorials";
 import Broker from "./Pages/Settings/components/BrokerLogin/BrokerLogin"
-
+import CopyTrade from "./Pages/CopyTrade/CopyTrade";
 
 function App() {
   const navigate = useNavigate();
@@ -102,6 +102,7 @@ function App() {
         <Route path="/settings" element={<Settings />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/onetouch-trading" element={<OneTouchTrading />} />
+        <Route path="/copytrade" element={<CopyTrade />} />
         <Route path="/strategic" element={<Strategic />} />
         <Route path="/tutorial" element={<Tutorials />} />
       </Routes>

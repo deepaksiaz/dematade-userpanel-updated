@@ -25,6 +25,7 @@ import {
   HiArrowDown,
   HiOutlineLogout,
 } from "react-icons/hi";
+import {FaDeezer} from 'react-icons/fa'
 import {FaSignInAlt,FaRupeeSign} from "react-icons/fa"
 import "./MainLayout.scss";
 import dematadeDarkLogo from "../../Assets/Images/dematade-dark-logo.png";
@@ -130,6 +131,9 @@ function MainLayout(props) {
           case "/broker":
         setActiveKey("Broker");
         break;
+        case "/copytrade":
+          setActiveKey("CopyTrade");
+          break;
       case "/tutorial":
         setActiveKey("Tutorial");
         break;
@@ -258,13 +262,14 @@ function MainLayout(props) {
           >
             Charting API
           </Menu.Item>
-          {/* <Menu.Item
-            onClick={() => navigate("/onetouch-trading")}
-            key={"One Touch Trading"}
-            icon={<HiCursorClick />}
+          <Menu.Item
+            onClick={() => navigate("/copytrade")}
+            key={"CopyTrade"}
+            icon={<FaDeezer/>}
+          
           >
-            One Touch Trading
-          </Menu.Item> */}
+           Copy Trade
+          </Menu.Item>
           <Menu.Item
             onClick={() => navigate("/strategic")}
             key={"Strategic"}

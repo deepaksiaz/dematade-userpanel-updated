@@ -11,12 +11,13 @@ import Swastika from "../../../../Component/Broker/Swastika/swastika";
 import AliceBlue from "../../../../Component/Broker/AliceBlue/aliceBlue";
 import  AngelBroking from "../../../../Component/Broker/AngelBroking/angelbroking";
 
-const { Option } = AutoComplete;
+const { Option } = Select;
 
 function BrokerLogin(props) {
   const dispatch = useDispatch();
   const [options, setOptions] = useState([]);
   const [broker, setBroker] = useState(null);
+  const [valued,setvalued]=useState(null);
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
   const brokerLoggedIn = useSelector((state) => state?.BrokerLogin?.isLoggedIn);
@@ -37,6 +38,8 @@ function BrokerLogin(props) {
   const onSelect = (value) => {
     const broker = options.find((broker) => broker.name === value);
     setBroker(broker);
+    const name=broker.name
+      setvalued(name);
   };
 
   useEffect(() => {
@@ -83,13 +86,24 @@ function BrokerLogin(props) {
             )}
           </div>
           <div className="search-flied">
+<<<<<<< Updated upstream
             <AutoComplete
               dropdownMatchSelectWidth={252}
               style={{ width: 400 }}
+=======
+            <Select
+            showSearch
+            className="options"
+            style={{ width: 200,textAlign:"left" }}
+>>>>>>> Stashed changes
               onSelect={onSelect}
               onSearch={handleSearch}
               placeholder="Search Broker"
               onChange={onSelect}
+<<<<<<< Updated upstream
+=======
+              notFoundContent={null}
+>>>>>>> Stashed changes
             >
               {options.map((option) => (
                 <Option
@@ -100,10 +114,19 @@ function BrokerLogin(props) {
                   {option.name}
                 </Option>
               ))}
+<<<<<<< Updated upstream
             </AutoComplete>
           </div>
 
           <AngelBroking broker={broker}/>
+=======
+            </Select>
+          </div>
+          { valued==="swastika" && <div><Swastika broker={broker}></Swastika></div>}
+          { valued==="alice blue" && <div><AliceBlue broker={broker}></AliceBlue></div>}
+          { valued==="angel broking" && <div><AngelBroking broker={broker}/></div>}
+          
+>>>>>>> Stashed changes
           {/* <Swastika broker={broker} /> */}
         </center>
       </div>

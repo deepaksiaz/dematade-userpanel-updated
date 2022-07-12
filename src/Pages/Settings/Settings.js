@@ -5,14 +5,19 @@ import Downloads from "./components/Downloads/Downloads";
 import IntradayStockList from "./components/IntradayStockList/IntradayStockList";
 import ProfitLossReport from "./components/ProfitLossReport/ProfitLossReport";
 import Subscription from "./components/Subscription/Subscription";
+import FundView from "./components/FundView/FundView";
 import "./Settings.scss";
 
 
 function Settings(props) {
-  const [activeKey, setActiveKey] = useState("subscription");
+  const [activeKey, setActiveKey] = useState("fundview");
 
   const renderActiveTabContent = () => {
     switch (activeKey) {
+      case "fundview":
+        return <div className="setting-content-wrap">
+            <FundView />
+          </div>;
       case "subscription":
         return <div className="setting-content-wrap">
             <Subscription />
@@ -38,6 +43,15 @@ function Settings(props) {
         <Col span={6}>
           <div className="setting-left-panel-wrap">
             <span className="setting-title">Settings</span>
+            <div
+              onClick={() => setActiveKey("fundview")}
+              className={`setting-side-item-wrap ${
+                activeKey == "fundview" && "active-item"
+              }`}
+            >
+              <span className="item-title">Fund View</span>
+             
+            </div>
             <div
               onClick={() => setActiveKey("subscription")}
               className={`setting-side-item-wrap ${
