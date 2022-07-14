@@ -86,24 +86,15 @@ function BrokerLogin(props) {
             )}
           </div>
           <div className="search-flied">
-<<<<<<< Updated upstream
-            <AutoComplete
-              dropdownMatchSelectWidth={252}
-              style={{ width: 400 }}
-=======
             <Select
             showSearch
             className="options"
             style={{ width: 200,textAlign:"left" }}
->>>>>>> Stashed changes
               onSelect={onSelect}
               onSearch={handleSearch}
               placeholder="Search Broker"
               onChange={onSelect}
-<<<<<<< Updated upstream
-=======
               notFoundContent={null}
->>>>>>> Stashed changes
             >
               {options.map((option) => (
                 <Option
@@ -114,19 +105,12 @@ function BrokerLogin(props) {
                   {option.name}
                 </Option>
               ))}
-<<<<<<< Updated upstream
-            </AutoComplete>
-          </div>
-
-          <AngelBroking broker={broker}/>
-=======
             </Select>
           </div>
           { valued==="swastika" && <div><Swastika broker={broker}></Swastika></div>}
           { valued==="alice blue" && <div><AliceBlue broker={broker}></AliceBlue></div>}
           { valued==="angel broking" && <div><AngelBroking broker={broker}/></div>}
           
->>>>>>> Stashed changes
           {/* <Swastika broker={broker} /> */}
         </center>
       </div>

@@ -18,9 +18,11 @@ function OpenPapertradePosition(props) {
     const positions_socket = socket("DEMATADE:PAPER_TRADE_ROOM", (data) => {
       setPositionsData(data.papertrade_positions);
     });
+     console.log("dd",positionsData)
     return () => {
       if (positions_socket) positions_socket();
     };
+   
   }, []);
 
   const columns = [
@@ -78,7 +80,7 @@ function OpenPapertradePosition(props) {
       align: "center",
       render: (ltp, record) => (
         <div>
-          <span>{parseInt('' + ltp).toFixed(2)}</span>
+          <span>{ltp?ltp > 0 ? `+ ${parseInt('' + ltp).toFixed(2)}` : `${parseInt('' + ltp).toFixed(2)}`:0}</span>
         </div>
       ),
     },

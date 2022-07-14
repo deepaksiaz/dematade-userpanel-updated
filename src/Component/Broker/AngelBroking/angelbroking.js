@@ -26,12 +26,8 @@ function AngelBroking({ broker }) {
       <div className="single-field">
         <span>USER ID</span>
         <Input
-<<<<<<< Updated upstream
-          value={userId}
-=======
            className="options"
            value={userId.toUpperCase()}
->>>>>>> Stashed changes
           onChange={(e) => setUserId(e.target.value)}
           placeholder="Enter User Id"
         />
