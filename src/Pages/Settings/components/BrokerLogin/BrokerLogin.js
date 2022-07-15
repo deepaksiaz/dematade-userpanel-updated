@@ -107,9 +107,9 @@ function BrokerLogin(props) {
               ))}
             </Select>
           </div>
-          { valued==="swastika" && <div><Swastika broker={broker}></Swastika></div>}
-          { valued==="alice blue" && <div><AliceBlue broker={broker}></AliceBlue></div>}
-          { valued==="angel broking" && <div><AngelBroking broker={broker}/></div>}
+          { valued==="SWASTIKA" && <div><Swastika broker={broker}></Swastika></div>}
+          { valued==="ALICE BLUE" && <div><AliceBlue broker={broker}></AliceBlue></div>}
+          { valued==="ANGEL BROKING" && <div><AngelBroking broker={broker}/></div>}
           
           {/* <Swastika broker={broker} /> */}
         </center>
