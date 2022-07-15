@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Form, Input, Button, message,notification } from "antd";
 import { MobileOutlined, LockOutlined } from "@ant-design/icons";
-import swastikaLogo from "../../Assets/Images/swastika-logo.svg";
+import swastikaLogo from "../../Assets/Images/dematade-dark-logo.png";
 import "./index.scss";
 import { loginUser, sendOtp } from "../../Redux/Actions/AuthActions";
 import { useDispatch, useSelector } from "react-redux";
