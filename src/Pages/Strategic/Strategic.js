@@ -189,7 +189,7 @@ function Strategic(props) {
               onClear={() => setTradeType(null)}
             >
               <Option className="options" value={"intraday"}>intraday</Option>
-              <Option className="options" value={"positional"}>positional</Option>
+            
             </Select>
 
           </div>
