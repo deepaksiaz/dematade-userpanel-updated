@@ -3,6 +3,8 @@ WORKDIR /work
 COPY package.json ./
 RUN npm install
 COPY . ./
+RUN apk add --no-cache tzdata
+ENV TZ=Asia/Kolkata
 #RUN npm run build
 
 #Stage 2
