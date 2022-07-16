@@ -70,24 +70,6 @@ function Subscription(props) {
           </span>
         </Col>
       </Row>
-      <Row className="single-item">
-        <Col span={7}>
-          <span className="field-label">Subscription On/ Off</span>
-        </Col>
-        <Col span={2}>:</Col>
-        <Col span={8}>
-          <Switch defaultChecked={true} />
-        </Col>
-      </Row>
-      <Row className="single-item">
-        <Col span={7}>
-          <span className="field-label">Auto Renewal</span>
-        </Col>
-        <Col span={2}>:</Col>
-        <Col span={8}>
-          <Switch />
-        </Col>
-      </Row>
     </div>
   );
 }
