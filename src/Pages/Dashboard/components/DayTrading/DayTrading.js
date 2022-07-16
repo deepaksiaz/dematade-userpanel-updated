@@ -525,8 +525,8 @@ function DayTrading(props) {
                   <span className="header-title">{item?.label}</span>
                   <select placeholder="SELECT TRADE" className="selectop" value={item?.userTrade} 
                     onChange={(e) => onUserTradeChange(e.target.value, item)}  disabled={runningTradeTypePositions[item.tradeType] || runningPapertradeTypePositions[item.tradeType]}>
-                    <option value="SELECT_TRADE" className="option-1">SELECT TRADE</option>
-                    <option value="LIVE_TRADE" className="option-2">LIVE TRADE</option>
+                   
+                    <option value="LIVE_TRADE" className="option-2" selected>LIVE TRADE</option>
                     <option value="PAPER_TRADE" className="option-3">PAPER TRADE</option>
                   </select>
                 </div>

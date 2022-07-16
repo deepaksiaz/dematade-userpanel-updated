@@ -24,7 +24,7 @@ echo ""
 
 
 docker rm -f $CONTAINER_NAME
-docker run -d -p 9090:80 --name $CONTAINER_NAME $IMAGE_NAME
+docker run -d -p 9090:3000 --name $CONTAINER_NAME $IMAGE_NAME
 
 
 echo ""
