@@ -2,7 +2,7 @@ import axios from "axios";
 import { API_URL } from "../../config";
 import { getTokenFromLocalStorage } from "../../helpers";
 import * as actionTypes from "./ActionTypes";
-
+import { useLocation, useNavigate } from "react-router";
 export const setBrokerSessionExpired = (data) => {
   return (dispatch) => {
     dispatch({
@@ -46,6 +46,7 @@ export const brokerLogin = (data, onSuccess) => {
   };
 };
 export const aliceBrokerLogin = (data, onSuccess) => {
+  
   return async (dispatch) => {
     dispatch({
       type: actionTypes.BROKER_LOGIN_INIT,
@@ -64,7 +65,11 @@ export const aliceBrokerLogin = (data, onSuccess) => {
             type: actionTypes.BROKER_LOGIN_SUCCESS,
             payload: res.data,
           });
+           window.location.replace(
+              `http://test-trade-panel.dematadesolution.com/`
+            );
           onSuccess();
+         
         } else {
           dispatch({
             type: actionTypes.BROKER_LOGIN_FAIL,
@@ -100,6 +105,9 @@ export const angelBrokerLogin = (data, onSuccess) => {
             type: actionTypes.BROKER_LOGIN_SUCCESS,
             payload: res.data,
           });
+           window.location.replace(
+              `http://test-trade-panel.dematadesolution.com/`
+            );
           onSuccess();
         } else {
           dispatch({
