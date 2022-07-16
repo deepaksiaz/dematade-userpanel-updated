@@ -62,7 +62,7 @@ function Downloads(props) {
       <div
         onClick={() =>
           download(
-            "https://test-website.dematadesolution.com/Charting_Software/DeMatade%20Algo.exe"
+            "https://www.test-website.dematadesolution.com/Charting_Software/DeMatade%20Algo.exe"
           )
         }
         className="charting-download-btn"
