@@ -6,6 +6,7 @@ import { brokerLogin ,angelBrokerLogin} from "../../../Redux/Actions/BrokerActio
 import "../Swastika/swastika.scss";
 
 function AngelBroking({ broker }) {
+  
   const dispatch = useDispatch();
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
@@ -21,6 +22,7 @@ function AngelBroking({ broker }) {
       const data = {clientcode: userId, password: password };
       dispatch(angelBrokerLogin(data, () => {}));
   };
+
   return (
     <div className="container">
       <div className="single-field">

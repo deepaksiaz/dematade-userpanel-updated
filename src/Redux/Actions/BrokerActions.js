@@ -3,6 +3,7 @@ import { API_URL } from "../../config";
 import { getTokenFromLocalStorage } from "../../helpers";
 import * as actionTypes from "./ActionTypes";
 import { useLocation, useNavigate } from "react-router";
+
 export const setBrokerSessionExpired = (data) => {
   return (dispatch) => {
     dispatch({
@@ -137,11 +138,10 @@ export const getBrokerLoginStatus = () => {
       })
       .then((res) => {
         if (res.data?.success) {
+          console.log(res.data)
           dispatch({
-            type: actionTypes.GET_BROKER_LOGIN_STATUS_SUCCESS,
-            payload: Boolean(res.data?.data?.brokerLogin),
+            type: actionTypes.GET_BROKER_LOGIN_STATUS_FAIL,
           });
-
           dispatch({
             type: actionTypes.SET_CUSTOMER_PLAN_STATUS,
             payload: res.data?.data?.plan_status
