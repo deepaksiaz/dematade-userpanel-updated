@@ -116,7 +116,7 @@ const CopyTrade = () => {
         <div>
         <Select
             showSearch
-            className="options"
+            className="options options-1"
             style={{ width: 200,textAlign:"left" }}
             placeholder="SELECT ROLE"
               onSelect={onSelect}

@@ -1,0 +1,34 @@
+.offerpage
+{
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #4a4a4a;
+    padding: 15px;
+    margin: 16px;
+    border-radius: 8px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    flex-flow: wrap;
+    border: 1px solid #dddfe0;
+    
+}
+.offerpage-1
+{
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #4a4a4a;
+ padding: 10px;
+    margin: 16px;
+    border-radius: 8px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    flex-flow: wrap;
+    border: 1px solid #dddfe0;
+    
+}
