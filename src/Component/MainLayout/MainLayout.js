@@ -26,6 +26,7 @@ import {
   HiOutlineLogout,
 } from "react-icons/hi";
 import {FaDeezer} from 'react-icons/fa'
+import {MdOutlineLocalOffer} from "react-icons/md"
 import {FaSignInAlt,FaRupeeSign} from "react-icons/fa"
 import "./MainLayout.scss";
 import dematadeDarkLogo from "../../Assets/Images/dematade-dark-logo.png";
@@ -122,9 +123,15 @@ function MainLayout(props) {
       case "/strategic":
         setActiveKey("Strategic");
         break;
+        case "/createstrategic":
+        setActiveKey("CreateStrategic");
+        break;
       case "/order-history":
         setActiveKey("Order History");
         break;
+        case "/offer":
+          setActiveKey("offer");
+          break;
         case "/pricing":
           setActiveKey("Pricing");
           break;
@@ -277,7 +284,19 @@ function MainLayout(props) {
           >
             Strategic
           </Menu.Item>
+          <Menu.Item
+            onClick={() => navigate("/createstrategic")}
+            key={"CreateStrategic"}
+            icon={<HiAcademicCap />}
+          >Make Own Strategic</Menu.Item>
           <Divider className="side-menu-divider" />
+          <Menu.Item
+            onClick={() => navigate("/offer")}
+            key={"offer"}
+            icon={<MdOutlineLocalOffer />}
+          >
+            Offers
+          </Menu.Item>
           <Menu.Item
             onClick={() => navigate("/pricing")}
             key={"Pricing"}
