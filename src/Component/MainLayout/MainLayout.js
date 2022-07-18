@@ -123,6 +123,9 @@ function MainLayout(props) {
       case "/strategic":
         setActiveKey("Strategic");
         break;
+        case "/createstrategic":
+        setActiveKey("CreateStrategic");
+        break;
       case "/order-history":
         setActiveKey("Order History");
         break;
@@ -281,6 +284,11 @@ function MainLayout(props) {
           >
             Strategic
           </Menu.Item>
+          <Menu.Item
+            onClick={() => navigate("/createstrategic")}
+            key={"CreateStrategic"}
+            icon={<HiAcademicCap />}
+          >Make Own Strategic</Menu.Item>
           <Divider className="side-menu-divider" />
           <Menu.Item
             onClick={() => navigate("/offer")}

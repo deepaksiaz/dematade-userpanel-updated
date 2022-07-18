@@ -7,6 +7,7 @@ import { setAxiosInterceptors } from "./helpers/axios.helper";
 import ChartingApiKey from "./Pages/ChartingApiKey/ChartingApiKey";
 import ContactUs from "./Pages/ContactUs";
 import OfferPage from "./Pages/OfferPage/OfferPage";
+import { MakeStrategic } from "./Pages/MakeStrategic/MakeStrategic";
 import Dashboard from "./Pages/Dashboard";
 import Login from "./Pages/Login";
 import OneTouchTrading from "./Pages/OneTouchTrading";
@@ -106,6 +107,7 @@ function App() {
         <Route path="/copytrade" element={<CopyTrade />} />
         <Route path="/strategic" element={<Strategic />} />
         <Route path="/offer" element={<OfferPage />} />
+        <Route path="/createStrategic" element={<MakeStrategic />} />
         <Route path="/tutorial" element={<Tutorials />} />
       </Routes>
     </MainLayout>

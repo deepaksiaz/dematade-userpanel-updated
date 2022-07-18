@@ -2,7 +2,8 @@
 {
     padding: 10px;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
+    flex-flow: wrap;
     align-items: center;
     font-weight: 500;
     font-size: 16px;
@@ -41,7 +42,11 @@ font-size: 14px;
 }
 .copy-body-2
 {
+    
     border-radius: 8px;
+    flex-direction: row;
+    display: flex;
+flex-flow: wrap;
     background-color: white;
     border: 1px solid #dddfe0;
     margin: 18px;
@@ -50,8 +55,8 @@ font-size: 14px;
 {
     padding: 20px;
     margin: 20px;
-    width: 110%;
-    height: 300px;
+    width: 100%;
+    height: auto;
     
     border-radius: 8px;
     background-color: white;
