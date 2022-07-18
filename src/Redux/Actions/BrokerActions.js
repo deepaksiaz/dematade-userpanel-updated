@@ -138,10 +138,11 @@ export const getBrokerLoginStatus = () => {
       })
       .then((res) => {
         if (res.data?.success) {
-          console.log(res.data)
           dispatch({
-            type: actionTypes.GET_BROKER_LOGIN_STATUS_FAIL,
+            type: actionTypes.GET_BROKER_LOGIN_STATUS_SUCCESS,
+            payload: Boolean(res.data?.data?.brokerLogin),
           });
+
           dispatch({
             type: actionTypes.SET_CUSTOMER_PLAN_STATUS,
             payload: res.data?.data?.plan_status
