@@ -15,8 +15,11 @@ function socket(channel, callbank) {
     });
     console.log("Socket created");
   }
-  
+  socket_connection.on('connect', () => {
+     console.log("connected");
+    });
   socket_connection?.on(channel, (new_data) => {
+    console.log("socket data",new_data)
     callbank(new_data);
   });
 
