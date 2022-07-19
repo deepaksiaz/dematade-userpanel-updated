@@ -25,9 +25,7 @@ const tradeTypesNotToShow = [
   // "NIFTY OPTION SELLING",
 ];
 
-const tradingList = DayTrading.filter((item) => {
-  return !tradeTypesNotToShow.includes(item.type);
-});
+const tradingList = DayTrading
 
 const erros = {
   apiKey: null,
