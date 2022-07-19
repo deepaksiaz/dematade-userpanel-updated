@@ -7,7 +7,7 @@ function socket(channel, callbank) {
   
   const auth_token = localStorage.getItem("authToken");
   if (auth_token && !socket_connection) {
-    socket_connection = io("https://test-api.dematadesolution.com/socket.io", {
+    socket_connection = io(API_URL, {
         transports: ["websocket"],
         reconnectionAttempts: 5,
         withCredentials: true,
