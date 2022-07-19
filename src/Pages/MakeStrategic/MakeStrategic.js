@@ -135,7 +135,7 @@ export const MakeStrategic = () => {
           About Your Strategic Development
           </div>
           <div className="aboutstrategic">
-            <ul className="about-bullet options">
+            <ul className="about-bullet">
                 <li>Submit your Strategic details our Team will contact you for development.</li>
                 <li>We can make your own strategic and we will add your strategic in only particular account.</li>
                 <li>You strategic is confidential and we will take responsibility. </li>
