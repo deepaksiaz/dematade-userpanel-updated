@@ -73,21 +73,21 @@
     "type": "MCXOPTION",
     "segment": "NFO",
     "active": true,
-    "tradeType": "stocknfo",
+    "tradeType": "mcxoption",
     "note": "For 1 Lot one symbol  1.8 Lacs capital required."
   },
   {
     "type": "NSECURRENCYOPTION",
     "segment": "NFO",
     "active": true,
-    "tradeType": "stocknfo",
+    "tradeType": "nsecurrencyoption",
     "note": "For 1 Lot one symbol  1.8 Lacs capital required."
   },
   {
     "type": "STOCKOPTION",
     "segment": "NFO",
     "active": true,
-    "tradeType": "stocknfo",
+    "tradeType": "stockoption",
     "note": "For 1 Lot one symbol  1.8 Lacs capital required."
   }
 ]
