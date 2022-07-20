@@ -78,8 +78,6 @@ function ContactUs(props) {
           <span className="title">Contact Us</span>
           <div className="subtitle">
             Please call or email and we will be happy to assist you.
-
-            7777777777
           </div>
           <div className="single-box">
             <HiPhone className="icon" />
