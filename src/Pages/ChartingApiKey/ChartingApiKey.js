@@ -363,7 +363,7 @@ function ChartingApiKey(props) {
                     {tradingList &&
                       tradingList.map((item, idx) => {
                         return (
-                          <Option className="options" value={item.type}>
+                          <Option className="options" value={item.tradeType}>
                             {item.type}
                           </Option>
                         );

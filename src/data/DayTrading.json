@@ -35,7 +35,7 @@
     "note": "For 1 Lot one symbol  2 Lacs capital required."
   },
   {
-    "type": "NSE-Currency NFO",
+    "type": "NSECURRENCYNFO",
     "segment": "CDS",
     "active": true,
     "tradeType": "nsecurrencynfo",
