@@ -70,19 +70,21 @@ function ChartingApiKey(props) {
 
   const dispatch = useDispatch();
 
-  // const tradingList = DayTrading.map((data) => {
-  //   return data.segment === exchange;
-  // });
-
   useEffect(() => {
     dispatch(getChartingKeyData());
   }, []);
 
   useEffect(() => {
-    const tradingdata = DayTrading.map((data) => {
-      return data.segment === exchange;
+    const tradingData = DayTrading.map((data) => {
+      return data.segment == exchange;
     });
-    setTradingList(tradingdata);
+    setTradingList(tradingData);
+  }, []);
+  useEffect(() => {
+    const tradingData = DayTrading.map((data) => {
+      return data.segment == exchange;
+    });
+    setTradingList(tradingData);
   }, [exchange]);
 
   useEffect(() => {
@@ -155,6 +157,7 @@ function ChartingApiKey(props) {
       return true;
     }
   };
+
   const validateInputs = () => {
     let flag = true;
     const errors = { ...inputErrors };
@@ -356,13 +359,14 @@ function ChartingApiKey(props) {
                     defaultValue={"BANK NIFTY NFO"}
                     status={inputErrors.tradingType ? "error" : ""}
                   >
-                    {tradingList.map((item, idx) => {
-                      return (
-                        <Option className="options" value={item.type}>
-                          {item.type}
-                        </Option>
-                      );
-                    })}
+                    {tradingList &&
+                      tradingList.map((item, idx) => {
+                        return (
+                          <Option className="options" value={item.type}>
+                            {item.type}
+                          </Option>
+                        );
+                      })}
                   </Select>
                   {inputErrors.tradingType && (
                     <Alert message={inputErrors.tradingType} type="error" />
