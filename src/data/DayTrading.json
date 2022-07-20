@@ -28,20 +28,6 @@
     "note": "For 1 Lot 25k capital required."
   },
   {
-    "type": "BANKNIFTY OPTION SELLING",
-    "segment": "NFO",
-    "active": true,
-    "tradeType": "bankniftyoptionselling",
-    "note": "For 1 Lot 50k capital required with hedging."
-  },
-  {
-    "type": "NIFTY OPTION SELLING",
-    "segment": "NFO",
-    "active": true,
-    "tradeType": "niftyoptionselling",
-    "note": "For 1 Lot 50k capital required with hedging."
-  },
-  {
     "type": "MCX NFO",
     "segment": "MCX",
     "active": true,
@@ -71,14 +57,14 @@
   },
   {
     "type": "MCXOPTION",
-    "segment": "NFO",
+    "segment": "MCX",
     "active": true,
     "tradeType": "mcxoption",
     "note": "For 1 Lot one symbol  1.8 Lacs capital required."
   },
   {
     "type": "NSECURRENCYOPTION",
-    "segment": "NFO",
+    "segment": "CDS",
     "active": true,
     "tradeType": "nsecurrencyoption",
     "note": "For 1 Lot one symbol  1.8 Lacs capital required."
