@@ -142,7 +142,7 @@ function OrderHistory({ showLabel = true, showSearch = true, showRefresh = true,
     <div className="order-history-main-wrap">
       <div className="table-top-panel-section">
         <div className="">
-          {showLabel && <span className="title">Order History</span>}
+          {showLabel && <span className="title">Order Histor</span>}
           
         </div>
         <div className="right-section">
