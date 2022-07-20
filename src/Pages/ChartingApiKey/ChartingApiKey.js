@@ -268,10 +268,11 @@ function ChartingApiKey(props) {
                 <div className="single-field">
                   <span className="label">Enter API Key</span>
                   <Input
+                    disabled={true}
                     className="input-number"
                     placeholder="X-API-KEY=abcdef12345"
                     size="large"
-                    value={apiKey}
+                    value={chartingKey?.api_key}
                     status={inputErrors.apiKey ? "error" : ""}
                     onChange={(e) => setApiKey(e.target.value)}
                   />
