@@ -162,7 +162,7 @@ function ChartingApiKey(props) {
     let flag = true;
     const errors = { ...inputErrors };
     flag =
-      flag & validateInput("apiKey", apiKey, "Please enter api key", errors);
+      flag & validateInput("apiKey", chartingKey.api_key, "Please enter api key", errors);
     flag =
       flag &
       validateInput("quantity", quantity, "Please enter quantity", errors);
