@@ -75,13 +75,13 @@ function ChartingApiKey(props) {
   }, []);
 
   useEffect(() => {
-    const tradingData = DayTrading.map((data) => {
+    const tradingData = DayTrading.filter((data) => {
       return data.segment == exchange;
     });
     setTradingList(tradingData);
   }, []);
   useEffect(() => {
-    const tradingData = DayTrading.map((data) => {
+    const tradingData = DayTrading.filter((data) => {
       return data.segment == exchange;
     });
     setTradingList(tradingData);
