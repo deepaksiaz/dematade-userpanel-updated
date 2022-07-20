@@ -54,7 +54,7 @@ function ChartingApiKey(props) {
   const [exchange, setExchange] = useState("");
   const [orderType, setOrderType] = useState("");
   const [tradingType, setTradingType] = useState("");
-  const [tradingList, setTrading] = useState("");
+  const [tradingList, setTradingList] = useState("");
   const [symbol, setSymbol] = useState("");
   const [showTradeConfirmation, setShowTradeConfirmation] = useState({
     show: false,
