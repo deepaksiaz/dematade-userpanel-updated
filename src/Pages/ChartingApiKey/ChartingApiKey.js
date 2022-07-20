@@ -1,5 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { Alert, Col, Input, message, Row, Select, Switch,notification } from "antd";
+import {
+  Alert,
+  Col,
+  Input,
+  message,
+  Row,
+  Select,
+  Switch,
+  notification,
+} from "antd";
 import CopyToClipboard from "react-copy-to-clipboard";
 import "./ChartingApiKey.scss";
 import { useDispatch, useSelector } from "react-redux";
@@ -25,8 +34,6 @@ const tradeTypesNotToShow = [
   // "NIFTY OPTION SELLING",
 ];
 
-const tradingList = DayTrading
-
 const erros = {
   apiKey: null,
   quantity: null,
@@ -38,7 +45,7 @@ const erros = {
   qty: null,
   orderType: null,
   profitLimit: null,
-  lossLimit: null
+  lossLimit: null,
 };
 
 function ChartingApiKey(props) {
@@ -47,8 +54,12 @@ function ChartingApiKey(props) {
   const [exchange, setExchange] = useState("");
   const [orderType, setOrderType] = useState("");
   const [tradingType, setTradingType] = useState("");
+  const [tradingList, setTrading] = useState("");
   const [symbol, setSymbol] = useState("");
-  const [showTradeConfirmation, setShowTradeConfirmation] = useState({ show: false, data: null });
+  const [showTradeConfirmation, setShowTradeConfirmation] = useState({
+    show: false,
+    data: null,
+  });
   const [inputErrors, setInputErrors] = useState(erros);
   const [chartingKey, setChartingKey] = useState();
   const chartingKeyData = useSelector(
@@ -59,9 +70,20 @@ function ChartingApiKey(props) {
 
   const dispatch = useDispatch();
 
+  // const tradingList = DayTrading.map((data) => {
+  //   return data.segment === exchange;
+  // });
+
   useEffect(() => {
     dispatch(getChartingKeyData());
   }, []);
+
+  useEffect(() => {
+    const tradingdata = DayTrading.map((data) => {
+      return data.segment === exchange;
+    });
+    setTradingList(tradingdata);
+  }, [exchange]);
 
   useEffect(() => {
     setChartingKey(chartingKeyData);
@@ -71,9 +93,10 @@ function ChartingApiKey(props) {
     dispatch(
       generateChartingKey(
         () => {
-          notification.success({ message: 'Notification',
-        description:("Charting key created successfully..")});
-         
+          notification.success({
+            message: "Notification",
+            description: "Charting key created successfully..",
+          });
         },
         () => {
           message.error("Failed to create charting key...");
@@ -87,12 +110,16 @@ function ChartingApiKey(props) {
       updateChartingKeyStatus(
         { id: chartingKey?.id, status: value ? 1 : 0 },
         () => {
-          notification.success({ message: 'Notification',
-        description:("Status updated successfully..")});
+          notification.success({
+            message: "Notification",
+            description: "Status updated successfully..",
+          });
         },
         () => {
-          notification.error({ message: 'Notification',
-        description:("Failed to update status...")});
+          notification.error({
+            message: "Notification",
+            description: "Failed to update status...",
+          });
         }
       )
     );
@@ -110,8 +137,10 @@ function ChartingApiKey(props) {
         setShowTradeConfirmation({ show: true, data: { trend } });
       }, 100);
     } else {
-      notification.error({ message: 'Notification',
-      description:("Please enter valid values to continue..")});
+      notification.error({
+        message: "Notification",
+        description: "Please enter valid values to continue..",
+      });
     }
   };
 
@@ -125,26 +154,41 @@ function ChartingApiKey(props) {
       errors[field] = null;
       return true;
     }
-  }
+  };
   const validateInputs = () => {
     let flag = true;
     const errors = { ...inputErrors };
-    flag = flag & validateInput("apiKey", apiKey, "Please enter api key", errors);
-    flag = flag & validateInput("quantity", quantity, "Please enter quantity", errors);
-    flag = flag & validateInput("exchange", exchange, "Please enter exchange", errors);
-    flag = flag & validateInput("tradingType", tradingType, "Please enter trading type", errors);
-    flag = flag & validateInput("symbol", symbol, "Please enter symbol", errors);
-    flag = flag & validateInput("orderType", orderType, "Please enter order type", errors);
+    flag =
+      flag & validateInput("apiKey", apiKey, "Please enter api key", errors);
+    flag =
+      flag &
+      validateInput("quantity", quantity, "Please enter quantity", errors);
+    flag =
+      flag &
+      validateInput("exchange", exchange, "Please enter exchange", errors);
+    flag =
+      flag &
+      validateInput(
+        "tradingType",
+        tradingType,
+        "Please enter trading type",
+        errors
+      );
+    flag =
+      flag & validateInput("symbol", symbol, "Please enter symbol", errors);
+    flag =
+      flag &
+      validateInput("orderType", orderType, "Please enter order type", errors);
     setInputErrors(errors);
     return flag;
-  }
+  };
 
   const handleBuy = () => {
-    createTrade('buy');
+    createTrade("buy");
   };
 
   const handleSell = () => {
-    createTrade('sell');
+    createTrade("sell");
   };
 
   const onTradeConfirm = (data) => {
@@ -169,8 +213,8 @@ function ChartingApiKey(props) {
   };
 
   const clearSymbolListFn = () => {
-    dispatch(clearSymbolList())
-  }
+    dispatch(clearSymbolList());
+  };
 
   return (
     <div className="charting-api-key-main">
@@ -215,9 +259,7 @@ function ChartingApiKey(props) {
             </div>
           </div>
           <div className="copy-trade-box">
-            <span className="box-title">
-              Copy Trade
-            </span>
+            <span className="box-title">Copy Trade</span>
             <Row gutter={60} className="content-single-row">
               <Col span={12}>
                 <div className="single-field">
@@ -227,10 +269,12 @@ function ChartingApiKey(props) {
                     placeholder="X-API-KEY=abcdef12345"
                     size="large"
                     value={apiKey}
-                    status={inputErrors.apiKey ? "error": ""}
+                    status={inputErrors.apiKey ? "error" : ""}
                     onChange={(e) => setApiKey(e.target.value)}
                   />
-                  {inputErrors.apiKey && <Alert message={inputErrors.apiKey} type="error" />}
+                  {inputErrors.apiKey && (
+                    <Alert message={inputErrors.apiKey} type="error" />
+                  )}
                 </div>
               </Col>
               <Col span={12}>
@@ -241,10 +285,12 @@ function ChartingApiKey(props) {
                     placeholder="20"
                     size="large"
                     value={quantity}
-                    status={inputErrors.quantity ? "error": ""}
+                    status={inputErrors.quantity ? "error" : ""}
                     onChange={(e) => setQuantity(e.target.value)}
                   />
-                  {inputErrors.quantity && <Alert message={inputErrors.quantity} type="error" />}
+                  {inputErrors.quantity && (
+                    <Alert message={inputErrors.quantity} type="error" />
+                  )}
                 </div>
               </Col>
             </Row>
@@ -255,8 +301,11 @@ function ChartingApiKey(props) {
                   <Select
                     placeholder="select exchange"
                     value={exchange}
-                    status={inputErrors.exchange ? "error": ""}
-                    onChange={(value) => {setExchange(value); clearSymbolListFn(); }}
+                    status={inputErrors.exchange ? "error" : ""}
+                    onChange={(value) => {
+                      setExchange(value);
+                      clearSymbolListFn();
+                    }}
                     defaultValue={"NFO"}
                   >
                     <Option value={"NSE"}>NSE</Option>
@@ -264,7 +313,9 @@ function ChartingApiKey(props) {
                     <Option value={"CDS"}>CDS</Option>
                     <Option value={"MCX"}>MCX</Option>
                   </Select>
-                  {inputErrors.exchange && <Alert message={inputErrors.exchange} type="error" />}
+                  {inputErrors.exchange && (
+                    <Alert message={inputErrors.exchange} type="error" />
+                  )}
                 </div>
               </Col>
               <Col span={12}>
@@ -273,15 +324,20 @@ function ChartingApiKey(props) {
                   <Select
                     placeholder="select order type"
                     value={orderType}
-                    onChange={(value) => { setOrderType(value); clearSymbolListFn(); }}
-                    status={inputErrors.orderType ? "error": ""}
+                    onChange={(value) => {
+                      setOrderType(value);
+                      clearSymbolListFn();
+                    }}
+                    status={inputErrors.orderType ? "error" : ""}
                     defaultValue={"MIS"}
                   >
                     <Option value={"MIS"}>MIS</Option>
-                    {exchange !== "NSE" && <Option value={"NRML"}>NRML</Option>}                    
+                    {exchange !== "NSE" && <Option value={"NRML"}>NRML</Option>}
                     <Option value={"CNC"}>CNC</Option>
                   </Select>
-                  {inputErrors.orderType && <Alert message={inputErrors.orderType} type="error" />}
+                  {inputErrors.orderType && (
+                    <Alert message={inputErrors.orderType} type="error" />
+                  )}
                 </div>
               </Col>
             </Row>
@@ -293,15 +349,24 @@ function ChartingApiKey(props) {
                     placeholder="select trading type"
                     value={tradingType}
                     className="options"
-                    onChange={(value) => { setTradingType(value); clearSymbolListFn(); }}
+                    onChange={(value) => {
+                      setTradingType(value);
+                      clearSymbolListFn();
+                    }}
                     defaultValue={"BANK NIFTY NFO"}
-                    status={inputErrors.tradingType ? "error": ""}
+                    status={inputErrors.tradingType ? "error" : ""}
                   >
                     {tradingList.map((item, idx) => {
-                      return <Option  className="options" value={item.type}>{item.type}</Option>;
+                      return (
+                        <Option className="options" value={item.type}>
+                          {item.type}
+                        </Option>
+                      );
                     })}
                   </Select>
-                  {inputErrors.tradingType && <Alert message={inputErrors.tradingType} type="error" />}
+                  {inputErrors.tradingType && (
+                    <Alert message={inputErrors.tradingType} type="error" />
+                  )}
                 </div>
               </Col>
               <Col span={12}>
@@ -318,13 +383,15 @@ function ChartingApiKey(props) {
                     onSearch={(value) => onSymbolChange(value)}
                     onChange={(value) => setSymbol(value)}
                     defaultValue={"NFO"}
-                    status={inputErrors.symbol ? "error": ""}
+                    status={inputErrors.symbol ? "error" : ""}
                   >
                     {(symbolList || []).map((item) => {
                       return <Option key={item.name}>{item.name}</Option>;
                     })}
                   </Select>
-                  {inputErrors.symbol && <Alert message={inputErrors.symbol} type="error" />}
+                  {inputErrors.symbol && (
+                    <Alert message={inputErrors.symbol} type="error" />
+                  )}
                 </div>
               </Col>
             </Row>
@@ -347,7 +414,9 @@ function ChartingApiKey(props) {
         <AppModal
           title="Trade Confirmation"
           show={showTradeConfirmation.show}
-          handleCancel={() => setShowTradeConfirmation({ show: false, data: null })}
+          handleCancel={() =>
+            setShowTradeConfirmation({ show: false, data: null })
+          }
           handleOk={() => onTradeConfirm(showTradeConfirmation.data)}
         >
           <p className="message_pop">Are you sure?</p>
