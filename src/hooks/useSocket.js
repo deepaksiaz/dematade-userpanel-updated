@@ -8,7 +8,7 @@ function socket(channel, callbank) {
   const auth_token = localStorage.getItem("authToken");
   if (auth_token && !socket_connection) {
     socket_connection = io(API_URL, {
-        transports: ["websocket"],
+        transports: ["websocket","polling"],
         reconnectionAttempts: 5,
         withCredentials: true,
         query: `token=${auth_token}`,
