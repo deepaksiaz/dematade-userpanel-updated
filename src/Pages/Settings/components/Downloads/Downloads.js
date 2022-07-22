@@ -3,8 +3,9 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getChartingData } from "../../../../Redux/Actions/settingActions";
 import { HiCloudDownload } from "react-icons/hi";
+import { Link } from "react-router-dom";
+// import {file} from '../../../../Assets/Software'
 import "./Downloads.scss";
-
 function Downloads(props) {
   const [charting, setCharting] = useState();
   const chartingData = useSelector((state) => state?.Setting?.chartingData);
@@ -20,11 +21,13 @@ function Downloads(props) {
   }, [chartingData]);
 
   function download(url) {
+    console.log("download button clicked..", url);
     const a = document.createElement("a");
     a.href = url;
     a.download = url.split("/").pop();
     document.body.appendChild(a);
-    a.click();
+    // console.log("a--->", a);
+    // a.click();
     document.body.removeChild(a);
   }
 
@@ -59,7 +62,7 @@ function Downloads(props) {
           <span className="field-value">{charting?.charting_ip || "-"}</span>
         </Col>
       </Row>
-      <div
+      {/* <div
         onClick={() =>
           download(
             "https://test-trade-panel.dematadesolution.com/Charting_Software/DeMatade%20Algo.exe"
@@ -71,6 +74,18 @@ function Downloads(props) {
         <span className="btn-label">
           Click here to download Charting Software
         </span>
+      </div> */}
+
+      <div className="charting-download-btn">
+        <a
+          href={require("../../../../Assets/Software/DeMatade_Algo.exe")}
+          download="DeMatade Algo.exe"
+        >
+          <HiCloudDownload className="btn-icon" />
+          <span className="btn-label">
+            Click here to download Charting Software
+          </span>
+        </a>
       </div>
     </div>
   );
