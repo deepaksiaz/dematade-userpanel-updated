@@ -80,7 +80,7 @@ function OrderHistory({ showLabel = true, showSearch = true, showRefresh = true,
       align: "center",
       render: (text, record) => (
         <div className={`pl_cell ${text == "B" ? "green" : "red"}`}>
-          <span>{text == "B" ? "BUY" : "SELL"}</span>
+          <span>{text == "B"||"BUY" ? "BUY" : "SELL"}</span>
         </div>
       ),
     },
