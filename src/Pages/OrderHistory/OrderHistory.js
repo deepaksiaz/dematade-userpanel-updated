@@ -79,8 +79,8 @@ function OrderHistory({ showLabel = true, showSearch = true, showRefresh = true,
       key: "Trantype",
       align: "center",
       render: (text, record) => (
-        <div className={`pl_cell ${text == "B"||"BUY" ? "green" : "red"}`}>
-          <span>{text == "B"||"BUY" ? "BUY" : "SELL"}</span>
+        <div className={`pl_cell ${text == "BUY" ? "green" : "red"}`}>
+          <span>{text == "BUY"? "BUY" : "SELL"}</span>
         </div>
       ),
     },
