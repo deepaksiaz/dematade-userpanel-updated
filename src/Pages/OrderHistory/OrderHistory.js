@@ -98,8 +98,8 @@ function OrderHistory({ showLabel = true, showSearch = true, showRefresh = true,
     },
     {
       title: "ENTRY PRICE",
-      key: "Avgprc",
-      dataIndex: "Avgprc",
+      key: "Avgpr",
+      dataIndex: "Avgpr",
       align: "center",
     },
     {
