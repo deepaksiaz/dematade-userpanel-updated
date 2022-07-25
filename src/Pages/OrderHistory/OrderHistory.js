@@ -1,9 +1,20 @@
-import { Button, Col, DatePicker, Input, Pagination, Row, Select, Space, Table, Tooltip } from "antd";
+import {
+  Button,
+  Col,
+  DatePicker,
+  Input,
+  Pagination,
+  Row,
+  Select,
+  Space,
+  Table,
+  Tooltip,
+} from "antd";
 import React, { useEffect, useState } from "react";
 import { HiChatAlt, HiDownload, HiSearch } from "react-icons/hi";
 import { useDispatch, useSelector } from "react-redux";
 import { getOrderHistory } from "../../Redux/Actions/orderHistoryAction";
-import { ReloadOutlined } from '@ant-design/icons';
+import { ReloadOutlined } from "@ant-design/icons";
 import moment from "moment";
 
 import "./OrderHistory.scss";
@@ -11,7 +22,13 @@ import PapertradeOrderHistory from "./PapertradeOrders";
 
 const { Option } = Select;
 
-function OrderHistory({ showLabel = true, showSearch = true, showRefresh = true, showDownload=false, showDateFilters=false }) {
+function OrderHistory({
+  showLabel = true,
+  showSearch = true,
+  showRefresh = true,
+  showDownload = false,
+  showDateFilters = false,
+}) {
   const [ordersData, setOrdersData] = useState([]);
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
@@ -19,7 +36,7 @@ function OrderHistory({ showLabel = true, showSearch = true, showRefresh = true,
   const [userTradeSelection, setUserTradeSelection] = useState("LIVE");
   const [refreshPapertrade, setRefreshPapertrade] = useState(0);
   const [downloadPapertrade, setDownloadPapertrade] = useState(0);
-  const [startDate, setStartDate] = useState(moment().subtract(1, 'days'));
+  const [startDate, setStartDate] = useState(moment().subtract(1, "days"));
   const [endDate, setEndDate] = useState(moment());
   const dispatch = useDispatch();
   const orderHistoryData = useSelector(
@@ -30,18 +47,44 @@ function OrderHistory({ showLabel = true, showSearch = true, showRefresh = true,
   );
 
   useEffect(() => {
-    dispatch(getOrderHistory({startDate, endDate}));
+    dispatch(getOrderHistory({ startDate, endDate }));
   }, []);
 
   const refeshOrderHistory = () => {
     if (userTradeSelection === "LIVE") dispatch(getOrderHistory());
-    if (userTradeSelection === "PAPER") setRefreshPapertrade(refreshPapertrade + 1);
-  }
+    if (userTradeSelection === "PAPER")
+      setRefreshPapertrade(refreshPapertrade + 1);
+  };
 
   const downloadOrderHistory = () => {
     if (userTradeSelection === "LIVE") dispatch(getOrderHistory());
-    if (userTradeSelection === "PAPER") setDownloadPapertrade(downloadPapertrade + 1);
-  }
+    if (userTradeSelection === "PAPER")
+      setDownloadPapertrade(downloadPapertrade + 1);
+  };
+
+  const renderText = (text) => {
+    if (text == "B") {
+      <div
+        className={`pl_cell ${
+          text == "B" ? "green" : "red"
+        }`}
+      >
+        <span>
+          {text == "B" ? "BUY" : "SELL"}
+        </span>
+      </div>;
+    } else if (text == "BUY") {
+      <div
+        className={`pl_cell ${
+          text == "BUY" ? "green" : "red" 
+        }`}
+      >
+        <span>
+          {text == "BUY" ? "BUY" : "SELL"}
+        </span>
+      </div>;
+    }
+  };
 
   useEffect(() => {
     if (userTradeSelection === "LIVE") {
@@ -79,9 +122,7 @@ function OrderHistory({ showLabel = true, showSearch = true, showRefresh = true,
       key: "Trantype",
       align: "center",
       render: (text, record) => (
-        <div className={`pl_cell ${text == "BUY"? "green" : "red" || text == "B"? "green" : "red"}`}>
-          <span>{text == "BUY"? "BUY" : "SELL" || text == "B"? "BUY" : "SELL"}</span>
-        </div>
+       renderText(text)
       ),
     },
     {
@@ -143,72 +184,114 @@ function OrderHistory({ showLabel = true, showSearch = true, showRefresh = true,
       <div className="table-top-panel-section">
         <div className="">
           {showLabel && <span className="title">Order Histor</span>}
-          
         </div>
         <div className="right-section">
           <Space>
-          {showDateFilters && (
-            <Row gutter={12} align="bottom" style={{"border": "0px solid red"}}>
-              <Col span={12}>
-                  <DatePicker placeholder="Start Date" size="middle" value={startDate} onChange={(date) => setStartDate(date)} />
-              </Col>
+            {showDateFilters && (
+              <Row
+                gutter={12}
+                align="bottom"
+                style={{ border: "0px solid red" }}
+              >
+                <Col span={12}>
+                  <DatePicker
+                    placeholder="Start Date"
+                    size="middle"
+                    value={startDate}
+                    onChange={(date) => setStartDate(date)}
+                  />
+                </Col>
 
-              <Col span={12}>
-                  <DatePicker placeholder="End Date" size="middle" value={endDate} onChange={(date) => setEndDate(date)} />
-              </Col>
-            </Row>
+                <Col span={12}>
+                  <DatePicker
+                    placeholder="End Date"
+                    size="middle"
+                    value={endDate}
+                    onChange={(date) => setEndDate(date)}
+                  />
+                </Col>
+              </Row>
             )}
-            <Select defaultValue={"LIVE"} value={userTradeSelection} onChange={value => setUserTradeSelection(value)}>
+            <Select
+              defaultValue={"LIVE"}
+              value={userTradeSelection}
+              onChange={(value) => setUserTradeSelection(value)}
+            >
               <Option value="LIVE">LIVE TRADE ORDERS</Option>
               <Option value="PAPER">PAPER TRADE ORDERS</Option>
             </Select>
-            {showSearch && <Input
-              className="search-input"
-              placeholder="Search"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              suffix={<HiSearch />}
-            />}
-            {showRefresh && <Button type="primary" shape="circle" icon={<ReloadOutlined />} onClick={refeshOrderHistory} />}
-            {showDownload && <Button type="primary" shape="circle" icon={<HiDownload />} onClick={downloadOrderHistory} />}
+            {showSearch && (
+              <Input
+                className="search-input"
+                placeholder="Search"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                suffix={<HiSearch />}
+              />
+            )}
+            {showRefresh && (
+              <Button
+                type="primary"
+                shape="circle"
+                icon={<ReloadOutlined />}
+                onClick={refeshOrderHistory}
+              />
+            )}
+            {showDownload && (
+              <Button
+                type="primary"
+                shape="circle"
+                icon={<HiDownload />}
+                onClick={downloadOrderHistory}
+              />
+            )}
           </Space>
         </div>
       </div>
-      {userTradeSelection === "PAPER" && <PapertradeOrderHistory search={search} refreshPapertrade={refreshPapertrade} downloadPapertrade={downloadPapertrade} startDate={startDate} endDate={endDate}></PapertradeOrderHistory>}
-      {userTradeSelection === "LIVE" && <div className="table-wrap">
-        <Table
-          loading={loadingGetOrderHistory}
-          pagination={false}
-          columns={columns}
-          dataSource={ordersData}
-        />
-        <div className="pagination-wrap">
-          <Pagination
-            pageSize={pageSize}
-            current={page}
-            onChange={(page) => setPage(page)}
-            total={orderHistoryData?.length}
+      {userTradeSelection === "PAPER" && (
+        <PapertradeOrderHistory
+          search={search}
+          refreshPapertrade={refreshPapertrade}
+          downloadPapertrade={downloadPapertrade}
+          startDate={startDate}
+          endDate={endDate}
+        ></PapertradeOrderHistory>
+      )}
+      {userTradeSelection === "LIVE" && (
+        <div className="table-wrap">
+          <Table
+            loading={loadingGetOrderHistory}
+            pagination={false}
+            columns={columns}
+            dataSource={ordersData}
           />
-          <span className="rows-per-page-title">Rows per page:</span>
-          <Select
-            className="page-select"
-            value={pageSize}
-            onChange={(value) => setPageSize(value)}
-          >
-            <Option value={10}>10</Option>
-            <Option value={20}>20</Option>
-            <Option value={50}>50</Option>
-          </Select>
-          <span className="page-range">
-            {(page - 1) * pageSize + 1}-
-            {(page - 1) * pageSize + pageSize > orderHistoryData?.length
-              ? orderHistoryData?.length
-              : (page - 1) * pageSize + pageSize}{" "}
-            of {orderHistoryData?.length}
-          </span>
+          <div className="pagination-wrap">
+            <Pagination
+              pageSize={pageSize}
+              current={page}
+              onChange={(page) => setPage(page)}
+              total={orderHistoryData?.length}
+            />
+            <span className="rows-per-page-title">Rows per page:</span>
+            <Select
+              className="page-select"
+              value={pageSize}
+              onChange={(value) => setPageSize(value)}
+            >
+              <Option value={10}>10</Option>
+              <Option value={20}>20</Option>
+              <Option value={50}>50</Option>
+            </Select>
+            <span className="page-range">
+              {(page - 1) * pageSize + 1}-
+              {(page - 1) * pageSize + pageSize > orderHistoryData?.length
+                ? orderHistoryData?.length
+                : (page - 1) * pageSize + pageSize}{" "}
+              of {orderHistoryData?.length}
+            </span>
+          </div>
         </div>
-      </div>
-      }
+      )}
     </div>
   );
 }
