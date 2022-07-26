@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getChartingData } from "../../../../Redux/Actions/settingActions";
 import { HiCloudDownload } from "react-icons/hi";
 import "./Downloads.scss";
-import { DeMatade_Algo } from "../../../../Assets/Software/DeMatade_Algo";
+import  DeMatade_Algo  from "../../../../Assets/Software/DeMatade_Algo.exe";
 
 function Downloads(props) {
   const [charting, setCharting] = useState();
