@@ -381,7 +381,7 @@ function MainLayout(props) {
                     <Menu.Item
                       onClick={() => {
                         window.localStorage.clear();
-                        window.location.href = "http://test-website.dematadesolution.com/";
+                        window.location.href = "https://dematadesolution.com/";
                       }}
                       key="1"
                       icon={<HiOutlineLogout />}
