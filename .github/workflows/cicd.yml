@@ -1,9 +1,9 @@
 name: Workflow-Release
 on:
-#  workflow_dispatch:
-  push:
-    branches:
-      - broker_integration
+  workflow_dispatch:
+#  push:
+#    branches:
+#      - broker_integration
 
 env:
   AWS_SG_ID: sg-076d543453764ccea

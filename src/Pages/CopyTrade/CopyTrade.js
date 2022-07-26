@@ -222,7 +222,7 @@ const CopyTrade = () => {
             
           </div>
           <div className="sub-copy-body">
-            <h1 style={{ margin: "10px" }}>DO</h1>
+            <h1 style={{ margin: "10px" }}>Do</h1>
             <ul>
               <li>Always select a reliable copy trader.</li>
               <li>
@@ -250,7 +250,7 @@ const CopyTrade = () => {
             <br></br>
             <br></br>
             <h4>
-              note : - We are not responsible of profit and loss between the
+              NOTE : - We are not responsible of profit and loss between the
               user and copy trader.{" "}
             </h4>
           </div>
