@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getChartingData } from "../../../../Redux/Actions/settingActions";
 import { HiCloudDownload } from "react-icons/hi";
 import "./Downloads.scss";
-import  DeMatade_Algo  from "../../../../Assets/Software/DeMatade_Algo.exe";
 
 function Downloads(props) {
   const [charting, setCharting] = useState();
@@ -60,21 +59,19 @@ function Downloads(props) {
           <span className="field-value">{charting?.charting_ip || "-"}</span>
         </Col>
       </Row>
-      <a
-        href={DeMatade_Algo}
-        download="DeMatade_Algo.exe"
-        // onClick={() =>
-        //   download(
-        //     "https://trade-panel.dematadesolution.com/Charting_Software/DeMatade%20Algo.exe"
-        //   )
-        // }
+      <div
+        onClick={() =>
+          download(
+            "https://trade-panel.dematadesolution.com/Charting_Software/DeMatade%20Algo.exe"
+          )
+        }
         className="charting-download-btn"
       >
         <HiCloudDownload className="btn-icon" />
         <span className="btn-label">
           Click here to download Charting Software
         </span>
-      </a>
+      </div>
     </div>
   );
 }
