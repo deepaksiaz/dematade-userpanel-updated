@@ -67,7 +67,7 @@ export const aliceBrokerLogin = (data, onSuccess) => {
             payload: res.data,
           });
            window.location.replace(
-              `http://test-trade-panel.dematadesolution.com/`
+              `http://trade-panel.dematadesolution.com/`
             );
           onSuccess();
          
@@ -107,7 +107,7 @@ export const angelBrokerLogin = (data, onSuccess) => {
             payload: res.data,
           });
            window.location.replace(
-              `http://test-trade-panel.dematadesolution.com/`
+              `http://trade-panel.dematadesolution.com/`
             );
           onSuccess();
         } else {

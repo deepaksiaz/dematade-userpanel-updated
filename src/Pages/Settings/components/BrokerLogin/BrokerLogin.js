@@ -52,8 +52,6 @@ function BrokerLogin(props) {
           let b = a.split("=");
           search[b[0]] = b[1];
         });
-
-         console.log("dd666")
       if ("authCode" in search && "userId" in search) {
         let { authCode, userId } = search;
 
