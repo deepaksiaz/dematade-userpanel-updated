@@ -1,18 +1,18 @@
 name: Workflow-Release
 on:
-  workflow_dispatch:
-#  push:
-#    branches:
-#      - broker_integration
+#  workflow_dispatch:
+  push:
+    branches:
+      - dev
 
 env:
-  AWS_SG_ID: sg-076d543453764ccea
+  AWS_SG_ID: sg-0ea8af7ccb1a7d8c0
   AWS_DEFAULT_REGION: ap-south-1
-  HOST: 13.127.83.93
+  HOST: 3.111.241.49
   USERNAME: ubuntu
-  PASSWORD: _RoSWlJAtr+S@o-1&lSp
+  PASSWORD: tYR5PAwQHsHR8h9GfN52
   PORT: 22
-  IAMGE_NAME: ematade-trade-panel:latest
+  IAMGE_NAME: dematade-trade-panel:latest
   AWS_ACCESS_KEY_ID: AKIAVCGVLWYNW2WP3JHI
   AWS_SECRET_ACCESS_KEY: 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
 
