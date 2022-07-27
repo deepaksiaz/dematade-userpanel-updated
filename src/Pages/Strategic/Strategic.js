@@ -2,11 +2,17 @@ import { debounce } from "lodash";
 import React, { useCallback, useEffect, useState } from "react";
 import { Button, Input, Pagination, Select, Table } from "antd";
 import { HiSearch } from "react-icons/hi";
-import {FaDownload} from 'react-icons/fa'
+import { FaDownload } from "react-icons/fa";
 import "./Strategic.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { getStrtegicOptionsData } from "../../Redux/Actions/dayTradingActions";
-import { downloadStrategicsData, downloadStrategicsSingle, getStrategicsData } from "../../Redux/Actions/strategicActions";
+import {
+  downloadStrategicsData,
+  downloadStrategicsSingle,
+  getStrategicsData,
+} from "../../Redux/Actions/strategicActions";
+
+
 
 const { Option } = Select;
 
@@ -52,11 +58,13 @@ function Strategic(props) {
     if (tradeType) filter.tradeType = tradeType;
     if (search) filter.search = search;
     dispatch(downloadStrategicsData(filter));
-  }
+  };
 
-  const onDownloadSingle = (strategic) => {
-    dispatch(downloadStrategicsSingle(strategic))
-  }
+  const onDownloadSingle = (data) => {
+    const file_name =
+      `${data.symbolname}_${data.exchange}_${data.typeoftrading}_${data.strategy}_${data.tradetype}.csv`.toLowerCase();
+    // dispatch(downloadStrategicsSingle(strategic))
+  };
 
   const columns = [
     {
@@ -145,12 +153,21 @@ function Strategic(props) {
       dataIndex: "download",
       key: "download",
       align: "center",
-      render: (text, record) => (
+      render: (text, data) => (
         <span>
-          {<Button type="primary" onClick={() => onDownloadSingle(record)}> <FaDownload/></Button>}
+          {
+            <a
+              type="primary"
+              href={require("../../Assets/Strategic_Performance/"+`${data.symbolname}_${data.exchange}_${data.typeoftrading}_${data.strategy}_${data.tradetype}.csv`.toLowerCase())}
+              download={`${data.symbolname}_${data.exchange}_${data.typeoftrading}_${data.strategy}_${data.tradetype}.csv`.toLowerCase()}
+            >
+              {" "}
+              <FaDownload />
+            </a>
+          }
         </span>
       ),
-    }
+    },
     // {
     //   title: "SQUARE OFF",
     //   key: "action",
@@ -174,7 +191,11 @@ function Strategic(props) {
             >
               {strategicOptionsData?.map((item) => {
                 return (
-                  <Option className="options" key={item?.id} value={item?.strategicName}>
+                  <Option
+                    className="options"
+                    key={item?.id}
+                    value={item?.strategicName}
+                  >
                     {item?.strategicName}
                   </Option>
                 );
@@ -188,10 +209,10 @@ function Strategic(props) {
               allowClear
               onClear={() => setTradeType(null)}
             >
-              <Option className="options" value={"intraday"}>intraday</Option>
-            
+              <Option className="options" value={"intraday"}>
+                intraday
+              </Option>
             </Select>
-
           </div>
           <div className="right-section">
             <Input
